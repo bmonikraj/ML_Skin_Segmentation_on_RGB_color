@@ -157,3 +157,16 @@ print array
 array=array.astype(float)
 res = cluster.vq.kmeans2(array,2,20)
 print res
+
+#########################################################################################################
+#Using naive bayes guassian classifier
+y=datasetPanda['T']
+del  datasetPanda['T']
+x = datasetPanda
+gb = GaussianNB()
+
+gb.fit(x,y)
+
+p = gb.predict([255, 204, 102])
+
+print p
